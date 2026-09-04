@@ -15,7 +15,7 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [src](src/) - Application source code.
 - [.npmrc](.npmrc) - NPM configuration to improve security and reliability.
 - [.nvmrc](.nvmrc) - NVM configuration that defines the required Node version.
-- [.editorconfig](.editorconfig) - Sets basic code style rules via [EditorConfig](https://editorconfig.org)
+- [.editorconfig](.editorconfig) - Define code style rules using [EditorConfig](https://editorconfig.org).
 - [opencode.json](opencode.json) - Project specific config for [OpenCode](https://opencode.ai/).
 
 ## Tech Stack
