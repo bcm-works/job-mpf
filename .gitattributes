@@ -1,0 +1,16 @@
+# GitHub repo linguist configuration
+
+.claude/** -linguist-detectable
+.github/** -linguist-detectable
+.zed/** -linguist-detectable
+.env.* -linguist-detectable
+.prototypes/** -linguist-detectable
+.* -linguist-detectable
+.*.* -linguist-detectable
+package-lock.json linguist-generated
+
+docs/** linguist-documentation
+
+*.js linguist-language=javascript
+*.ts linguist-language=typescript
+*.tsx linguist-language=typescript
