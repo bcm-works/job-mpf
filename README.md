@@ -8,6 +8,7 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [.github](.github/) - GitHub config.
 - [.prototypes](.prototypes/) - Ideas and half-built prototypes.
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
+- [.vscode](.vscode/) - Customised [VS Code](https://code.visualstudio.com/) project configuration.
 - [docs](docs/) - Documentation and contextual information.
 - [docs/adrs](docs/adrs/) - Architecture decision records in Markdown files.
 - [docs/ADR.md](docs/ADR.md) - Architecture decision record guide.
