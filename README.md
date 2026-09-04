@@ -10,6 +10,7 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
 - [docs](docs/) - Documentation and contextual information.
 - [docs/adrs](docs/adrs/) - Architecture decision records in Markdown files.
+- [docs/ADR.md](docs/ADR.md) - Architecture decision record guide.
 - [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
 - [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
 - [src](src/) - Application source code.
