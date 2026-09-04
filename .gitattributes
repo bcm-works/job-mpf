@@ -1,3 +1,7 @@
+# Maintain consistent line endings
+
+* text=auto eol=lf
+
 # GitHub repo linguist configuration
 
 .claude/** -linguist-detectable
