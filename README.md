@@ -1,1 +1,43 @@
-# job-mpf
+# Front End Technical Test
+
+Technical test submission for Miroma Project Factory by [Brendan Murty](https://bcm.works).
+
+## Structure
+
+- [.claude](.claude/) - Project specific config for [Claude Code](https://claude.com/product/claude-code).
+- [.github](.github/) - GitHub config.
+- [.prototypes](.prototypes/) - Ideas and half-built prototypes.
+- [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
+- [docs](docs/) - Documentation and contextual information.
+- [docs/adrs](docs/adrs/) - Architecture decision records in Markdown files.
+- [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
+- [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
+- [src](src/) - Application source code.
+- [.npmrc](.npmrc) - NPM configuration to improve security and reliability.
+- [.nvmrc](.nvmrc) - NVM configuration that defines the required Node version.
+- [.editorconfig](.editorconfig) - Sets basic code style rules via [EditorConfig](https://editorconfig.org)
+- [opencode.json](opencode.json) - Project specific config for [OpenCode](https://opencode.ai/).
+
+## Tech Stack
+
+- [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
+- 
+
+## Required Tools
+
+- [Node](https://nodejs.org/en) (version in [.nvmrc](.nvmrc)) - Consider installing via my [Node setup script](https://github.com/bcm-works/dotfiles/blob/main/dev/node.sh).
+- 
+
+## Initial Setup
+
+- 
+
+## Commands
+
+- 
+
+## Deployment
+
+First setup a new [Deno Deploy](https://deno.com/deploy) project by following the steps in [docs/INFRA.md](docs/INFRA.md).
+
+Following this, new releases will be automatically triggered from [Deno Deploy](https://deno.com/deploy) when new commits are pushed to the `main` branch.
