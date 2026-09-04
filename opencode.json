@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama/gemma4:latest",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ollama-local",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "gemma4:latest": {
+          "name": "gemma4"
+        }
+      }
+    }
+  },
+  "autoupdate": true,
+  "default_agent": "plan",
+  "share": "disabled",
+  "compaction": {
+    "auto": true,
+    "prune": false,
+    "reserved": 10000
+  },
+  "permission": {
+    "edit": "allow",
+    "question": "allow",
+    "webfetch": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "read": {
+      "*": "allow",
+      ".env": "deny",
+      ".env.*": "deny",
+      "docs/AI-USE.md": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "cat": "allow",
+      "ls": "allow",
+      "tail": "allow",
+      "go test": "allow",
+      "GOCACHE=/tmp/gocache go test": "allow",
+      "git status": "allow",
+      "git log": "allow",
+      "git commit": "deny",
+      "git push": "deny",
+    }
+  }
+}
