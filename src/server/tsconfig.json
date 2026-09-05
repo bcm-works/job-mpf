@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ES5", "ES2015", "ES2015.Promise", "ES2016", "ES2017", "ES2018", "ES2018.AsyncIterable", "ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "~/*": ["../../*"],
+      "@/*": ["../../*"],
+      "#shared": ["../shared"],
+      "#shared/*": ["../shared/*"],
+      "#server": ["."],
+      "#server/*": ["./*"]
+    }
+  },
+  "include": [
+    "./**/*",
+    "../../.nuxt/types/nitro.d.ts",
+    "../../.nuxt/types/nitro-nuxt.d.ts",
+    "../../.nuxt/types/nitro-imports.d.ts"
+  ]
+}
