@@ -32,3 +32,5 @@ Fetch information from the following websites to clarify suggested changes:
 - GitHub public code: https://raw.githubusercontent.com/
 - GitHub documentation: https://docs.github.com/
 - Node packages (NPM): https://www.npmjs.com/
+- Nuxt: https://nuxt.com/docs/4.x/
+- TheMovieDB API: https://developer.themoviedb.org/docs
