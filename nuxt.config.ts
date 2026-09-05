@@ -2,6 +2,14 @@ import { fileURLToPath } from 'node:url'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    preset: "deno",
+    // @ts-ignore
+    output: {
+      dir: "dist"
+    }
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
