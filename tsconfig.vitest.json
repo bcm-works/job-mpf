@@ -1,12 +1,14 @@
 {
   "extends": "./tsconfig.app.json",
 
-  // Override to include only test files and clear exclusions.
-  // Application code imported in tests is automatically included via module resolution.
-  "include": ["src/**/__tests__/*", "env.d.ts"],
+  // Include test files and all source files so that .vue files imported by tests
+  // are explicitly listed, as required by composite mode.
+  "include": ["src/**/*", "src/**/*.vue", "env.d.ts"],
   "exclude": [],
 
   "compilerOptions": {
+    "composite": true,
+
     // Vitest runs in a different environment than the application code.
     // Adjust lib and types accordingly.
     "lib": [],
