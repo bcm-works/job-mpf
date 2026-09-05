@@ -14,8 +14,8 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
   - Pre-deploy command: `(empty)`
   - Runtime Configuration: `Dynamic App`
   - Runtime Configuration > Entrypoint: `.output/server/index.mjs`
-  - Runtime Configuration > Memory Limit: `512MiB`
-  - Build Memory Limit: `2GiB`
+  - Runtime Configuration > Memory Limit: `768 MiB`
+  - Build Memory Limit: `3 GiB`
   - Deploy from GitHub: `(link to this repository)`
 - Create (or navigate to) the Organisation
 - Setup/confirm the Organisation configuration

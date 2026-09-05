@@ -4,7 +4,7 @@
   "minimumDependencyAge": 7,
   "lock": true,
   "tasks": {
-    "build": "nuxt build",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 nuxt build",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -13,7 +13,6 @@
   },
   "imports": {
     "@iconify-json/lucide": "npm:@iconify-json/lucide@^1.2.127",
-    "@iconify-json/simple-icons": "npm:@iconify-json/simple-icons@^1.2.94",
     "@nuxt/ui": "npm:@nuxt/ui@^4.11.0",
     "nuxt": "npm:nuxt@^4.5.2",
     "tailwindcss": "npm:tailwindcss@^4.3.3",
@@ -21,5 +20,9 @@
     "eslint": "npm:eslint@^10.9.1",
     "typescript": "npm:typescript@^6.0.3",
     "vue-tsc": "npm:vue-tsc@^3.3.11"
+  },
+  "allowScripts": {
+    "allow": [],
+    "deny": ["npm:esbuild@0.27.7", "npm:esbuild@0.28.2", "npm:unrs-resolver@1.12.2", "npm:vue-demi@0.14.10"]
   }
 }
