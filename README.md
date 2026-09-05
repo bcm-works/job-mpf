@@ -21,7 +21,8 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 ## Tech Stack
 
 - [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
-- Vue and Nuxt
+- [Deno](https://deno.com/) - Development tooling and package management.
+- [Nuxt](https://nuxt.com/) - A [Vue](https://vuejs.org/) framework that provides UI and server features.
 
 ## Required Tools
 
@@ -30,7 +31,10 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 
 ## Initial Setup
 
-`deno install`
+```bash
+deno install
+cp .sample.env .env
+```
 
 ## Commands
 

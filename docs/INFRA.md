@@ -17,6 +17,7 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
   - Runtime Configuration > Memory Limit: `768 MiB`
   - Build Memory Limit: `3 GiB`
   - Deploy from GitHub: `(link to this repository)`
+  - Settings > Environment Variables: `(production values for all items in .sample.env)`
 - Create (or navigate to) the Organisation
 - Setup/confirm the Organisation configuration
   - Domains
