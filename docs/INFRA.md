@@ -9,11 +9,11 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
 - Setup/confirm the App configuration
   - App Directory: `(root)`
   - Framework preset: `No Preset`
-  - Install command: `npm install`
-  - Build command: `npm run build-only`
+  - Install command: `pnpm install`
+  - Build command: `pnpm run build`
   - Pre-deploy command: `(empty)`
   - Runtime Configuration: `Dynamic App`
-  - Runtime Configuration > Entrypoint: `src/main.ts`
+  - Runtime Configuration > Entrypoint: `.output/server/index.mjs`
   - Runtime Configuration > Memory Limit: `512MiB`
   - Build Memory Limit: `2GiB`
   - Deploy from GitHub: `(link to this repository)`

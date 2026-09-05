@@ -9,33 +9,33 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [.prototypes](.prototypes/) - Ideas and half-built prototypes.
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
 - [.vscode](.vscode/) - Customised [VS Code](https://code.visualstudio.com/) project configuration.
+- [app](app/) - Application source code.
 - [docs](docs/) - Documentation and contextual information.
 - [docs/adrs](docs/adrs/) - Architecture decision records in Markdown files.
 - [docs/ADR.md](docs/ADR.md) - Architecture decision record guide.
 - [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
 - [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
-- [src](src/) - Application source code.
-- [.npmrc](.npmrc) - NPM configuration to improve security and reliability.
-- [.nvmrc](.nvmrc) - NVM configuration that defines the required Node version.
 - [.editorconfig](.editorconfig) - Define code style rules using [EditorConfig](https://editorconfig.org).
 - [opencode.json](opencode.json) - Project specific config for [OpenCode](https://opencode.ai/).
 
 ## Tech Stack
 
 - [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
+- [PNPM](https://pnpm.io/) - App dependency management.
 - 
 
 ## Required Tools
 
-- [Node](https://nodejs.org/en) (version in [.nvmrc](.nvmrc)) - Consider installing via my [Node setup script](https://github.com/bcm-works/dotfiles/blob/main/dev/node.sh).
+- [PNPM](https://pnpm.io/) (version 12.3.2)
 - 
 
 ## Initial Setup
 
-- 
+`pnpm install`
 
 ## Commands
 
+- `pnpm run dev` - Start a local dev server
 - 
 
 ## Deployment
