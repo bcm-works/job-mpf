@@ -10,7 +10,7 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
   - App Directory: `(root)`
   - Framework preset: `No Preset`
   - Install command: `npm install`
-  - Build command: `npm run build`
+  - Build command: `npm run build-only`
   - Pre-deploy command: `(empty)`
   - Runtime Configuration: `Dynamic App`
   - Runtime Configuration > Entrypoint: `src/main.ts`
