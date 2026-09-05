@@ -13,7 +13,7 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
   - Build command: `deno task build`
   - Pre-deploy command: `(empty)`
   - Runtime Configuration: `Dynamic App`
-  - Runtime Configuration > Entrypoint: `./dist/server/index.ts`
+  - Runtime Configuration > Entrypoint: `./dist/server/index.mjs`
   - Runtime Configuration > Memory Limit: `768 MiB`
   - Build Memory Limit: `3 GiB`
   - Deploy from GitHub: `(link to this repository)`
