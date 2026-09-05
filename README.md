@@ -10,8 +10,8 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
 - [.vscode](.vscode/) - Customised [VS Code](https://code.visualstudio.com/) project configuration.
 - [docs](docs/) - Documentation and contextual information.
-- [docs/adrs](docs/adrs/) - Architecture decision records in Markdown files.
-- [docs/ADR.md](docs/ADR.md) - Architecture decision record guide.
+- [docs/adrs](docs/adrs/) - Architecture Decision Records as Markdown files.
+- [docs/ADR.md](docs/ADR.md) - Rules for Architecture Decision Records.
 - [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
 - [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
 - [src](src/) - Application and server source code.
@@ -23,7 +23,8 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
 - [Deno KV](https://docs.deno.com/deploy/kv/) - Database storage and hosting.
 - [Deno](https://deno.com/) - Development tooling and package management.
-- [Nuxt](https://nuxt.com/) - A [Vue](https://vuejs.org/) framework that provides UI and server features.
+- [Nuxt](https://nuxt.com/) - A [Vue](https://vuejs.org/) framework that adds modern web server features.
+- [Vue](https://vuejs.org/) - Frontend JavaScript framework.
 
 ## Required Tools
 
