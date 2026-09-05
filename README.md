@@ -26,25 +26,27 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 - [Nuxt](https://nuxt.com/) - A [Vue](https://vuejs.org/) framework that adds modern web server features.
 - [Vue](https://vuejs.org/) - Frontend JavaScript framework.
 
-## Required Tools
-
-- [Deno](https://deno.com/) (`latest stable`) - Consider installing via my [Deno setup script](https://github.com/bcm-works/dotfiles/blob/main/dev/deno.sh).
-- 
-
 ## Initial Setup
+
+First install the `latest stable` version of [Deno](https://deno.com/). One option is to use my [Deno setup script](https://github.com/bcm-works/dotfiles/blob/main/dev/deno.sh).
+
+Then you can run:
 
 ```bash
 deno install
 cp .sample.env .env
 ```
 
+Now edit the Git Ignored file named `.env` and set appropriate values for all variables.
+
 ## Commands
 
-- `deno task dev` - Start a local dev server
-- 
+- `deno task dev` - Start the local dev server
+- `deno task build` - Make a new production-ready build
 
 ## Deployment
 
 First setup a new [Deno Deploy](https://deno.com/deploy) project by following the steps in [docs/INFRA.md](docs/INFRA.md).
 
 Following this, new releases will be automatically triggered from [Deno Deploy](https://deno.com/deploy) when new commits are pushed to the `main` branch.
+
