@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  // @ts-ignore
   css: ['~/assets/css/main.css'],
 
   routeRules: {

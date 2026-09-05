@@ -21,21 +21,20 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 ## Tech Stack
 
 - [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
-- [PNPM](https://pnpm.io/) - App dependency management.
-- 
+- Vue and Nuxt
 
 ## Required Tools
 
-- [PNPM](https://pnpm.io/) (version 11.25.0)
+- [Deno](https://deno.com/) (`latest stable`) - Consider installing via my [Deno setup script](https://github.com/bcm-works/dotfiles/blob/main/dev/deno.sh).
 - 
 
 ## Initial Setup
 
-`pnpm install`
+`deno install`
 
 ## Commands
 
-- `pnpm run dev` - Start a local dev server
+- `deno task dev` - Start a local dev server
 - 
 
 ## Deployment

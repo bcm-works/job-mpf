@@ -9,8 +9,8 @@ This project uses [Deno Deploy](https://deno.com/deploy) for deployment and host
 - Setup/confirm the App configuration
   - App Directory: `(root)`
   - Framework preset: `No Preset`
-  - Install command: `pnpm install`
-  - Build command: `pnpm run build`
+  - Install command: `deno install`
+  - Build command: `deno task build`
   - Pre-deploy command: `(empty)`
   - Runtime Configuration: `Dynamic App`
   - Runtime Configuration > Entrypoint: `.output/server/index.mjs`
