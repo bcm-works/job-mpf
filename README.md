@@ -2,10 +2,15 @@
 
 Technical test submission for Miroma Project Factory by [Brendan Murty](https://bcm.works).
 
+This project uses data from [The Movie Database](https://www.themoviedb.org/) and includes:
+
+- Movie search
+- 
+
 ## Structure
 
 - [.claude](.claude/) - Project specific config for [Claude Code](https://claude.com/product/claude-code).
-- [.github](.github/) - GitHub config.
+- [.github](.github/) - Project specific config for GitHub.
 - [.prototypes](.prototypes/) - Ideas and half-built prototypes.
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
 - [.vscode](.vscode/) - Customised [VS Code](https://code.visualstudio.com/) project configuration.
