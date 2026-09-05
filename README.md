@@ -26,7 +26,7 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 
 ## Required Tools
 
-- [PNPM](https://pnpm.io/) (version 11.24.4)
+- [PNPM](https://pnpm.io/) (version 11.25.0)
 - 
 
 ## Initial Setup
