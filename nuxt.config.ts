@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
-    preset: "deno",
+    preset: "deno_deploy",
     // @ts-ignore
     output: {
       dir: "dist"
