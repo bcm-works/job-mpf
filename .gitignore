@@ -10,6 +10,8 @@ node_modules
 .env.*
 !.env.example
 
+.data
+
 .claude/graph.json
 .claude/graph-index.json
 .claude/code-map.md

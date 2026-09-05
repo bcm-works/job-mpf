@@ -2,6 +2,19 @@ import { fileURLToPath } from 'node:url'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  dir: {
+    "app": "src/app",
+    "assets": "src/app/assets",
+    "layouts": "src/app/layouts",
+    "middleware": "src/app/middleware",
+    "pages": "src/app/pages",
+    "plugins": "src/app/plugins",
+    "public": "src/public",
+    "shared": "src/shared",
+  },
+
+  serverDir: "src/server",
+
   nitro: {
     preset: "deno_server",
     // @ts-ignore
@@ -20,7 +33,7 @@ export default defineNuxtConfig({
   },
 
   // @ts-ignore
-  css: ['~/assets/css/main.css'],
+  css: ['~/src/app/assets/css/main.css'],
 
   routeRules: {
     '/': { prerender: true }

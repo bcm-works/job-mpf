@@ -3,6 +3,10 @@
   "preferPackageJson": false,
   "minimumDependencyAge": 7,
   "lock": true,
+  "exclude": [
+    "dist/*",
+    "node_modules/*"
+  ],
   "tasks": {
     "build": "NODE_OPTIONS=--max-old-space-size=4096 nuxt build",
     "dev": "nuxt dev",
@@ -12,6 +16,7 @@
     "typecheck": "nuxt typecheck"
   },
   "imports": {
+    "@deno/kv": "npm:@deno/kv@^0.14.0",
     "@iconify-json/lucide": "npm:@iconify-json/lucide@^1.2.127",
     "@nuxt/ui": "npm:@nuxt/ui@^4.11.0",
     "nuxt": "npm:nuxt@^4.5.2",
