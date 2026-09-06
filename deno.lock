@@ -2,11 +2,10 @@
   "version": "5",
   "specifiers": {
     "npm:@deno/kv@0.14": "0.14.0",
-    "npm:@iconify-json/lucide@^1.2.127": "1.2.129",
+    "npm:@iconify-json/lucide@^1.2.129": "1.2.129",
     "npm:@nuxt/eslint@^1.17.0": "1.17.0_eslint@10.10.0_@vue+compiler-sfc@3.5.42_rolldown@1.2.7_typescript@6.0.3_vite@8.2.2",
     "npm:@nuxt/ui@^4.11.0": "4.11.0_tailwindcss@4.3.3_typescript@6.0.3_@deno+kv@0.14.0",
-    "npm:eslint@*": "10.10.0_jiti@2.7.0",
-    "npm:eslint@^10.9.1": "10.10.0_jiti@2.7.0",
+    "npm:eslint@^10.10.0": "10.10.0_jiti@2.7.0",
     "npm:nuxt@^4.5.2": "4.5.2_rolldown@1.2.7_@vue+compiler-sfc@3.5.42_eslint@10.10.0_typescript@6.0.3_vite@8.2.2_vue-tsc@3.3.11",
     "npm:tailwindcss@^4.3.3": "4.3.3",
     "npm:typescript@^6.0.3": "6.0.3",
@@ -6858,10 +6857,10 @@
   "workspace": {
     "dependencies": [
       "npm:@deno/kv@0.14",
-      "npm:@iconify-json/lucide@^1.2.127",
+      "npm:@iconify-json/lucide@^1.2.129",
       "npm:@nuxt/eslint@^1.17.0",
       "npm:@nuxt/ui@^4.11.0",
-      "npm:eslint@^10.9.1",
+      "npm:eslint@^10.10.0",
       "npm:nuxt@^4.5.2",
       "npm:tailwindcss@^4.3.3",
       "npm:typescript@^6.0.3",
