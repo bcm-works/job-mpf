@@ -16,6 +16,7 @@
     "typecheck": "nuxt typecheck"
   },
   "imports": {
+    "@/*": "./src/*",
     "@deno/kv": "npm:@deno/kv@^0.14.0",
     "@iconify-json/lucide": "npm:@iconify-json/lucide@^1.2.129",
     "@nuxt/ui": "npm:@nuxt/ui@^4.11.0",

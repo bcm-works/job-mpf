@@ -17,6 +17,9 @@ export default defineNuxtConfig({
     "shared": "src/shared",
     "modules": "src/modules",
   },
+  alias: {
+    "@": fileURLToPath(new URL('./src', import.meta.url))
+  },
   nitro: {
     preset: "deno_server",
     output: {

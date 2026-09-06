@@ -13,8 +13,10 @@
     "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "~/*": ["../../*"],
-      "@/*": ["../../*"],
+      "~": [".."],
+      "~/*": ["../*"],
+      "@": [".."],
+      "@/*": ["../*"],
       "#shared": ["../shared"],
       "#shared/*": ["../shared/*"],
       "#server": ["."],
