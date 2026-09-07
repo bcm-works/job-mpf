@@ -5,6 +5,7 @@
   --font-sans: 'Public Sans', sans-serif;
 
   --color-*: initial;
+  --ui-text-*: initial;
 
   --color-brand-100: #FF9770;
   --color-brand-900: #331E16;
@@ -13,17 +14,12 @@
 :root {
   --ui-primary: #FF9770;
   --ui-text-highlighted: #FF9770;
+  --ui-text: #FFF0EB;
+  --ui-text-muted: #FFF0EB;
+  --ui-text-dimmed: #FFF0EB;
+  --ui-text-inverted: #FFF0EB;
   --ui-bg: #010101;
-  --ui-border: #331E16;
-  --ui-border-muted: #331E16;
-  --ui-border-accented: #331E16;
-  --ui-border-inverted: #331E16;
-}
-
-.dark {
-  --ui-primary: #FF9770;
-  --ui-text-highlighted: #FF9770;
-  --ui-bg: #010101;
+  --ui-bg-elevated: #FF9770;
   --ui-border: #331E16;
   --ui-border-muted: #331E16;
   --ui-border-accented: #331E16;

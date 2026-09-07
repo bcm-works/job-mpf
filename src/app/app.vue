@@ -56,10 +56,6 @@ const links = [{
           }"
         />
       </template>
-
-      <template #right>
-        <UColorModeButton />
-      </template>
     </UHeader>
 
     <UMain>
