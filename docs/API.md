@@ -68,3 +68,91 @@ curl http://localhost:3000/api/movies/343611
 ```
 
 Response: `{ "id": 343611, "title": "Jack Reacher: Never Go Back", "overview": "...", "posterUrl": "https://image.tmdb.org/...", ... }`. Returns `400` for a non-numeric id and `404` when TMDB has no movie with that id. Optional `language` query param (defaults to `en-US`).
+
+## Favourites - List
+
+```bash
+curl http://localhost:3000/api/favourites
+```
+
+Response: `{ "count": 1, "results": [{ "id": "movie:343611", "moviedbId": 343611, "title": "...", "status": "active", ... }] }`. Only `active` records are returned.
+
+## Favourites - Add
+
+```bash
+curl -X POST http://localhost:3000/api/favourites \
+  -H 'Content-Type: application/json' \
+  -d '{"moviedbId":343611}'
+```
+
+Response: `201 { "favourite": {...}, "movie": {...} }` (`200` when already active). Returns `400` for a non-numeric id and `404` when TMDB has no movie with that id. Reactivates soft-removed entries.
+
+## Favourites - Remove (soft)
+
+```bash
+curl -X DELETE http://localhost:3000/api/favourites/343611
+```
+
+Response: `{ "id": "343611", "removed": true }`. Sets `status` to `"removed"` instead of deleting. Returns `404` when never added.
+
+## Groups - List
+
+```bash
+curl http://localhost:3000/api/groups
+```
+
+Response: `{ "count": 1, "results": [{ "id": "...", "title": "...", "movieIds": ["movie:343611"], "status": "active", ... }] }`. Only `active` groups, newest first.
+
+## Groups - Create
+
+```bash
+curl -X POST http://localhost:3000/api/groups \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Friday night"}'
+```
+
+Response: `201 GroupRecord`. `title` must be 1-80 characters.
+
+## Groups - Details
+
+```bash
+curl http://localhost:3000/api/groups/my-group-id
+```
+
+Response: `{ "group": {...}, "movies": [{...MovieRecord}] }`. `movies` resolves `movieIds` to `active` movie snapshots. Returns `404` for missing or soft-removed groups.
+
+## Groups - Rename
+
+```bash
+curl -X PATCH http://localhost:3000/api/groups/my-group-id \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"New name"}'
+```
+
+Response: updated `GroupRecord`. Returns `404` for missing or soft-removed groups.
+
+## Groups - Remove (soft)
+
+```bash
+curl -X DELETE http://localhost:3000/api/groups/my-group-id
+```
+
+Response: `{ "id": "...", "removed": true }`. Sets `status` to `"removed"` instead of deleting.
+
+## Groups - Add movie
+
+```bash
+curl -X POST http://localhost:3000/api/groups/my-group-id/movies \
+  -H 'Content-Type: application/json' \
+  -d '{"moviedbId":343611}'
+```
+
+Response: `{ "group": {...}, "movie": {...} }`. Idempotent — re-adding keeps a single entry. Caches the movie from TMDB when needed.
+
+## Groups - Remove movie
+
+```bash
+curl -X DELETE http://localhost:3000/api/groups/my-group-id/movies/343611
+```
+
+Response: `{ "group": {...}, "removed": 343611 }`. Idempotent — the group stays `active`.

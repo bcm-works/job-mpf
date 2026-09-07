@@ -1,10 +1,12 @@
+export type RecordStatus = "active" | "removed";
+
 export type UserRecord = {
   id: string;
   name: string;
   email: string;
   createdAt: Date;
   updatedAt: Date;
-  status: "active" | "removed";
+  status: RecordStatus;
 }
 
 export type MovieRecord = {
@@ -16,12 +18,16 @@ export type MovieRecord = {
   releaseDate: Date;
   createdAt: Date;
   updatedAt: Date;
+  status: RecordStatus;
 }
 
 export type FavouriteRecord = {
   id: string;
   userId: string;
   movieId: string;
+  createdAt: Date;
+  updatedAt: Date;
+  status: RecordStatus;
 }
 
 export type GroupRecord = {
@@ -31,5 +37,5 @@ export type GroupRecord = {
   movieIds: string[];
   createdAt: Date;
   updatedAt: Date;
-  status: "active" | "removed";
+  status: RecordStatus;
 }

@@ -11,17 +11,29 @@ useHead({
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'Movie Finder'
+const description = 'Search movies, save favourites and organise them into groups.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  ogDescription: description
 })
+
+const links = [{
+  label: 'Search',
+  to: '/',
+  icon: 'i-lucide-search'
+}, {
+  label: 'Favourites',
+  to: '/favourites',
+  icon: 'i-lucide-heart'
+}, {
+  label: 'Groups',
+  to: '/groups',
+  icon: 'i-lucide-folder'
+}]
 </script>
 
 <template>
@@ -35,20 +47,11 @@ useSeoMeta({
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
 
-        <TemplateMenu />
+        <UNavigationMenu :items="links" variant="link" />
       </template>
 
       <template #right>
         <UColorModeButton />
-
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
     </UHeader>
 
@@ -66,14 +69,7 @@ useSeoMeta({
       </template>
 
       <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
+        <TheMovieDbLink />
       </template>
     </UFooter>
   </UApp>
