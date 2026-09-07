@@ -23,7 +23,6 @@ The submission is available online at [mpf.bcm.works](https://mpf.bcm.works/)
 - [docs/API.md](docs/API.md) - API documentation.
 - [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
 - [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
-- [docs/external](docs/external/) - External documents used for reference only.
 - [src](src/) - Application and server source code.
 - [NOTES.md](NOTES.md) - Implementation notes, decisions made, thoughts and general recommendations.
 - [.editorconfig](.editorconfig) - Define code style rules using [EditorConfig](https://editorconfig.org).

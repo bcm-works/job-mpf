@@ -20,4 +20,4 @@ This focus will delay implementation of various more complex and time consuming 
 ## Consequences
 
 - Engineering time for the skipped features will require future scoping based on agreed requirements
-- The MVP will not meet every goal from the [project plan](../external/technical-test-exercise.pdf)
+- The MVP will not meet every goal
