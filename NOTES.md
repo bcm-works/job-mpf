@@ -26,5 +26,8 @@ Following this, I refined the output to meet my own standards, via extra prompts
 
 ## Limitations
 
-- The [scope of the app implementation](docs/adrs/002-app-prototype.md) was lowered based on my focus areas
-- 
+The [scope of the app implementation](docs/adrs/002-app-prototype.md) was lowered based on my focus areas.
+
+## Credits
+
+The logo image was created using the [Emblems app](https://apps.gnome.org/Emblem/).

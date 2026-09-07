@@ -14,7 +14,6 @@ The submission is available online at [mpf.bcm.works](https://mpf.bcm.works/)
 
 ## Structure
 
-- [.claude](.claude/) - Project specific config for [Claude Code](https://claude.com/product/claude-code).
 - [.github](.github/) - Project specific config for GitHub.
 - [.prototypes](.prototypes/) - Ideas and half-built prototypes.
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
