@@ -6,7 +6,7 @@
 - Please also refer to the ADRs in [docs/adrs](docs/adrs/).
 - I've focused my time on this exercise based on my understanding of the role I'm applying for.
 - The [scope of the app implementation](docs/adrs/002-app-prototype.md) was altered based on my focus areas.
-- I created the logo image using the [Emblems app](https://apps.gnome.org/Emblem/).
+- I created the [logo](src/public/icons/logo.png) using the [Emblems app](https://apps.gnome.org/Emblem/).
 - Due to family commitments, my time on this project has been split up over various days.
 - I have increased my time spent here based on a desire to clearly demonstrate my skills.
 - In a real-world project, I would include myself in the initial information gathering and planning stages so that each team member spent appropriate time working towards the joint goals of the project and our internal technical quality and maintenance standards.
@@ -29,6 +29,7 @@ I then refined the output to meet my own standards, via extra prompts and manual
 
 ## Improvements, ideas and reflections
 
+- Unit tests have not been added as yet, this task should be built out by AI tooling and human review later on
 - Various sections need further changes to be production ready, such as adding user login and management features
 - Depending on expected production usage, I would recommend using Docker containers to simplify deployment to auto-scaling systems like GCP Cloud Run
-- Unit tests have not been added as yet, this task should be built out by AI tooling and human review later on
+- If the infrastructure plan is to move from Deno Deploy, the database layer code would have to be changed from it's current Deno KV setup
