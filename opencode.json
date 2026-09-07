@@ -37,9 +37,9 @@
     },
     "bash": {
       "*": "ask",
-      "cat": "allow",
-      "ls": "allow",
-      "tail": "allow",
+      "cat *": "allow",
+      "ls *": "allow",
+      "tail *": "allow",
       "deno task *": "allow",
       "eslint *": "allow",
       "npx eslint *": "allow",
