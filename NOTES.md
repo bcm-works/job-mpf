@@ -5,9 +5,11 @@
 - This file includes my implementation notes, decisions made, thoughts and general recommendations.
 - Please also refer to the ADRs in [docs/adrs](docs/adrs/).
 - I've focused my time on this exercise based on my understanding of the role I'm applying for.
+- The [scope of the app implementation](docs/adrs/002-app-prototype.md) was altered based on my focus areas.
+- I created the logo image using the [Emblems app](https://apps.gnome.org/Emblem/).
 - Due to family commitments, my time on this project has been split up over various days.
-- The [scope of the app implementation](docs/adrs/002-app-prototype.md) was lowered based on my focus areas.
-- The logo image was created using the [Emblems app](https://apps.gnome.org/Emblem/).
+- I have increased my time spent here based on a desire to clearly demonstrate my skills.
+- In a real-world project, I would include myself in the initial information gathering and planning stages so that each team member spent appropriate time working towards the joint goals of the project and our internal technical quality and maintenance standards.
 
 ## Time Spent
 
