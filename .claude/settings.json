@@ -32,7 +32,10 @@
       "Bash(ls*)",
       "Bash(tail*)",
       "Bash(git status*)",
-      "Bash(git log*)"
+      "Bash(git log*)",
+      "Bash(deno task *)",
+      "Bash(eslint *)",
+      "Bash(npx eslint *)"
     ],
     "deny": [
       "Read(.env)",

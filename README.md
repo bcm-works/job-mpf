@@ -4,8 +4,9 @@ Technical test submission for Miroma Project Factory by [Brendan Murty](https://
 
 This project uses data from [The Movie Database](https://www.themoviedb.org/) and includes:
 
-- Movie search
-- 
+- Searching for movies
+- Adding and managing favourite movies
+- Adding and managing movies in groups
 
 ## Structure
 
@@ -17,9 +18,12 @@ This project uses data from [The Movie Database](https://www.themoviedb.org/) an
 - [docs](docs/) - Documentation and contextual information.
 - [docs/adrs](docs/adrs/) - Architecture Decision Records as Markdown files.
 - [docs/ADR.md](docs/ADR.md) - Rules for Architecture Decision Records.
+- [docs/API.md](docs/API.md) - API documentation.
 - [docs/AI-USE.md](docs/AI-USE.md) - Policy for use of AI Code Generation tools.
 - [docs/INFRA.md](docs/INFRA.md) - Infrastructure setup documentation.
+- [docs/external](docs/external/) - External documents used for reference only.
 - [src](src/) - Application and server source code.
+- [NOTES.md](NOTES.md) - Implementation notes, decisions made, thoughts and general recommendations.
 - [.editorconfig](.editorconfig) - Define code style rules using [EditorConfig](https://editorconfig.org).
 - [opencode.json](opencode.json) - Project specific config for [OpenCode](https://opencode.ai/).
 
