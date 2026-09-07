@@ -63,18 +63,21 @@ header[class*='bg-default'] nav a[aria-current='page'] {
   border-radius: var(--ui-radius);
 }
 
-/* Favourite saved state - white background, header brand colour text */
-.favourite-saved {
+/* Saved states - white background, header brand colour text */
+.favourite-saved,
+.list-saved {
   background-color: #FFFFFF;
   color: var(--color-brand-100);
   border: 1px solid var(--color-brand-100);
 }
 
-.favourite-saved:hover {
+.favourite-saved:hover,
+.list-saved:hover {
   background-color: #FFFFFF;
   color: var(--color-brand-100);
 }
 
-.favourite-saved svg {
+.favourite-saved svg,
+.list-saved svg {
   color: currentColor;
 }

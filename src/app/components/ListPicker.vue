@@ -5,15 +5,26 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (event: 'added', listId: string): void
+  (event: 'added' | 'removed', listId: string): void
 }>()
 
 const open = ref(false)
-const { lists, fetchLists, addMovieToList } = useLists()
+const { lists, fetchLists, addMovieToList, removeMovieFromList } = useLists()
 const pendingId = ref<string | null>(null)
 const error = ref<string | null>(null)
 const newTitle = ref('')
 const creating = ref(false)
+
+const movieKey = computed(() => `movie:${props.moviedbId}`)
+
+const isSaved = computed(() =>
+  lists.value.some(list => (list.movieIds ?? []).includes(movieKey.value))
+)
+
+function isInList(listId: string): boolean {
+  const list = lists.value.find(item => item.id === listId)
+  return list ? (list.movieIds ?? []).includes(movieKey.value) : false
+}
 
 function openPicker() {
   open.value = true
@@ -27,9 +38,21 @@ async function addToList(listId: string) {
   try {
     await addMovieToList(listId, props.moviedbId)
     emit('added', listId)
-    open.value = false
   } catch (err: unknown) {
     error.value = err instanceof Error ? err.message : 'Failed to add movie to list.'
+  } finally {
+    pendingId.value = null
+  }
+}
+
+async function removeFromList(listId: string) {
+  pendingId.value = listId
+  error.value = null
+  try {
+    await removeMovieFromList(listId, props.moviedbId)
+    emit('removed', listId)
+  } catch (err: unknown) {
+    error.value = err instanceof Error ? err.message : 'Failed to remove movie from list.'
   } finally {
     pendingId.value = null
   }
@@ -53,16 +76,24 @@ async function createAndAdd() {
     creating.value = false
   }
 }
+
+onMounted(() => {
+  if (!lists.value.length) {
+    fetchLists()
+  }
+})
 </script>
 
 <template>
   <div class="inline-flex">
     <UButton
       icon="i-lucide-list-plus"
-      label="List"
-      color="neutral"
-      variant="ghost"
+      :label="isSaved ? 'Saved to list' : 'Save to list'"
+      :color="isSaved ? 'primary' : 'neutral'"
+      :variant="isSaved ? 'solid' : 'outline'"
       size="xs"
+      :class="isSaved ? 'list-saved' : undefined"
+      :aria-pressed="isSaved"
       @click="openPicker"
     />
 
@@ -96,12 +127,31 @@ async function createAndAdd() {
               class="flex items-center justify-between gap-2 border border-default rounded-md px-3 py-2"
             >
               <span class="text-sm font-medium truncate">{{ list.title }}</span>
-              <UButton
-                label="Add"
-                size="xs"
-                :loading="pendingId === list.id"
-                @click="addToList(list.id)"
-              />
+              <div class="flex items-center gap-2 shrink-0">
+                <UBadge
+                  v-if="isInList(list.id)"
+                  variant="subtle"
+                  size="xs"
+                >
+                  Saved
+                </UBadge>
+                <UButton
+                  v-if="isInList(list.id)"
+                  label="Remove"
+                  size="xs"
+                  color="error"
+                  variant="ghost"
+                  :loading="pendingId === list.id"
+                  @click="removeFromList(list.id)"
+                />
+                <UButton
+                  v-else
+                  label="Add"
+                  size="xs"
+                  :loading="pendingId === list.id"
+                  @click="addToList(list.id)"
+                />
+              </div>
             </li>
           </ul>
 

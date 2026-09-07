@@ -12,8 +12,8 @@ I've focused my time on this exercise based on my understanding of the role I'm 
 
 As an estimate, my time working on this submission was:
 
-- 50% on framework setup, AI configuration, and general documentation
-- 25% on infrastructure setup and related documentation
+- 50% on framework and infra setup, AI configuration, and general documentation
+- 25% on app config, theming and related documentation
 - 25% on app-level coding, supported by AI
 
 ## AI Usage

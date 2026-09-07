@@ -26,7 +26,7 @@ const links = [{
   to: '/',
   icon: 'i-lucide-search'
 }, {
-  label: 'Favourites',
+  label: 'Saved',
   to: '/favourites',
   icon: 'i-lucide-star'
 }, {
