@@ -4,15 +4,56 @@
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --color-*: initial;
+
+  --color-brand-100: #FF9770;
+}
+
+:root {
+  --ui-primary: #FF9770;
+  --ui-text-highlighted: #FF9770;
+  --ui-bg: #010101;
+  --ui-border: #FF9770;
+  --ui-border-muted: #FF9770;
+  --ui-border-accented: #FF9770;
+  --ui-border-inverted: #FF9770;
+}
+
+.dark {
+  --ui-primary: #FF9770;
+  --ui-text-highlighted: #FF9770;
+  --ui-bg: #010101;
+  --ui-border: #FF9770;
+  --ui-border-muted: #FF9770;
+  --ui-border-accented: #FF9770;
+  --ui-border-inverted: #FF9770;
+}
+
+/* Opaque brand header (overrides UHeader default bg-default/75 + blur) */
+header[class*='bg-default'] {
+  background-color: #FF9770;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #FFFFFF;
+  --ui-primary: #FFFFFF;
+  --ui-text-highlighted: #FFFFFF;
+}
+
+header[class*='bg-default'] a,
+header[class*='bg-default'] button {
+  color: #FFFFFF;
+}
+
+/* Header nav icons always match their link's text color */
+header[class*='bg-default'] nav a svg {
+  color: currentColor;
+}
+
+/* Active page link: white pill with brand text + icon */
+header[class*='bg-default'] nav a.router-link-active,
+header[class*='bg-default'] nav a.router-link-exact-active,
+header[class*='bg-default'] nav a[aria-current='page'] {
+  background-color: #FFFFFF;
+  color: #FF9770;
+  border-radius: var(--ui-radius);
 }

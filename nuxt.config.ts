@@ -38,14 +38,6 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
   compatibilityDate: '2026-06-30',
-  icon: {
-    customCollections: [
-      {
-        prefix: 'simple-icons',
-        dir: fileURLToPath(new URL('./app/assets/icons/simple-icons', import.meta.url))
-      }
-    ]
-  },
   eslint: {
     config: {
       stylistic: {

@@ -9,7 +9,7 @@
       class="themoviedb-link"
     >
       <img
-        src="~/assets/icons/themoviedb.svg"
+        src="/icons/themoviedb.svg"
         alt="The Movie Database"
         class="themoviedb-image"
       >
