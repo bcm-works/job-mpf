@@ -2,7 +2,7 @@
 
 ## Status
 
-`Approved on 7 Sep 2026`
+`Approved on 5 Sep 2026`
 
 ## Context
 

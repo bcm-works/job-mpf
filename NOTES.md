@@ -13,9 +13,9 @@
 
 As an estimate, the time I spent working on this submission was:
 
-- 50% on framework and infra setup, AI configuration, and general documentation
-- 25% on app config, theming and related documentation
-- 25% on app-level coding, supported by AI
+- `50%` on framework and infra setup, AI configuration, and general documentation
+- `25%` on app config, theming and related documentation
+- `25%` on app-level coding, supported by AI
 
 ## AI Usage
 
@@ -29,3 +29,4 @@ I then refined the output to meet my own standards, via extra prompts and manual
 
 - Various sections need further changes to be production ready, such as adding user login and management features
 - Depending on expected production usage, I would recommend using Docker containers to simplify deployment to auto-scaling systems like GCP Cloud Run
+- Unit tests have not been added as yet, this task should be built out by AI tooling and human review later on
