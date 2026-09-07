@@ -31,7 +31,10 @@ const rating = computed(() => {
 </script>
 
 <template>
-  <UCard :ui="{ body: 'p-0 sm:p-0' }">
+  <UCard
+    :ui="{ body: 'p-0 sm:p-0' }"
+    class="movie-card"
+  >
     <NuxtLink
       :to="`/movies/${moviedbId}`"
       class="block focus-visible:outline-3 outline-primary/25 rounded-t-lg overflow-hidden"
@@ -51,7 +54,7 @@ const rating = computed(() => {
       </div>
     </NuxtLink>
 
-    <div class="p-4 flex flex-col gap-2">
+    <div class="p-4 flex flex-col gap-2 flex-1 movie-card-body">
       <NuxtLink
         :to="`/movies/${moviedbId}`"
         class="font-semibold leading-snug hover:text-primary line-clamp-2"
@@ -65,7 +68,7 @@ const rating = computed(() => {
         {{ overview || 'No overview available.' }}
       </p>
 
-      <div class="flex gap-2 pt-1">
+      <div class="flex gap-2 flex-wrap pt-1 movie-card-actions">
         <UButton
           icon="i-lucide-star"
           :label="isFavourite ? 'Saved' : 'Save'"
@@ -80,6 +83,7 @@ const rating = computed(() => {
         <ListPicker
           :moviedb-id="moviedbId"
           :title="title"
+          size="xs"
         />
       </div>
     </div>

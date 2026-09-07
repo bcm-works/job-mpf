@@ -1,8 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   moviedbId: number
   title: string
-}>()
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+}>(), {
+  size: 'md'
+})
 
 const emit = defineEmits<{
   (event: 'added' | 'removed', listId: string): void
@@ -88,10 +91,10 @@ onMounted(() => {
   <div class="inline-flex">
     <UButton
       icon="i-lucide-list-plus"
-      :label="isSaved ? 'Saved to list' : 'Save to list'"
+      :label="isSaved ? 'Added' : 'Add'"
       :color="isSaved ? 'primary' : 'neutral'"
       :variant="isSaved ? 'solid' : 'outline'"
-      size="xs"
+      :size="size"
       :class="isSaved ? 'list-saved' : undefined"
       :aria-pressed="isSaved"
       @click="openPicker"
@@ -99,7 +102,7 @@ onMounted(() => {
 
     <UModal
       v-model:open="open"
-      :title="`Add “${title}” to a list`"
+      :title="`Add to a list`"
     >
       <template #body>
         <div class="flex flex-col gap-3">

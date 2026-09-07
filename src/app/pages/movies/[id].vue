@@ -146,7 +146,7 @@ onMounted(async () => {
         <div class="flex gap-2 flex-wrap pt-1">
           <UButton
             icon="i-lucide-star"
-            :label="isFavourite(movie.id) ? 'Saved to favourites' : 'Save to favourites'"
+            :label="isFavourite(movie.id) ? 'Saved' : 'Save'"
             :color="isFavourite(movie.id) ? 'primary' : 'neutral'"
             :variant="isFavourite(movie.id) ? 'solid' : 'outline'"
             :class="isFavourite(movie.id) ? 'favourite-saved' : undefined"
