@@ -47,7 +47,10 @@ const links = [{
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
 
-        <UNavigationMenu :items="links" variant="link" />
+        <UNavigationMenu
+          :items="links"
+          variant="link"
+        />
       </template>
 
       <template #right>
@@ -63,13 +66,11 @@ const links = [{
 
     <UFooter>
       <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
-        </p>
+        <FooterCopyright />
       </template>
 
       <template #right>
-        <TheMovieDbLink />
+        <FooterMovieDb />
       </template>
     </UFooter>
   </UApp>
