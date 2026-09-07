@@ -1,4 +1,4 @@
-// Lists data layer for the default (single) user.
+// Lists data layer.
 
 import type { FavouriteMovie } from './useFavourites'
 

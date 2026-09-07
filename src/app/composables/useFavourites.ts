@@ -1,4 +1,4 @@
-// Favourites data layer for the default (single) user.
+// Favourites data layer.
 
 export interface FavouriteMovie {
   id: string
