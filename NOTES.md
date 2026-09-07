@@ -1,8 +1,10 @@
 # Notes
 
-Implementation notes, decisions made, thoughts and general recommendations.
+## Summary
 
-Please also refer to the ADRs in docs/adrs](docs/adrs/)
+This file includes my implementation notes, decisions made, thoughts and general recommendations.
+
+Please also refer to the ADRs in [docs/adrs](docs/adrs/).
 
 ## Time Spent
 

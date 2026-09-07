@@ -42,14 +42,18 @@ const links = [{
       <template #left>
         <NuxtLink
           to="/"
-          class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
+          class="logo-link focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1 inline-flex items-center text-brand-900"
         >
-          <AppLogo class="w-auto h-6 shrink-0" />
+          <AppLogo class="shrink-0 text-brand-900" />
         </NuxtLink>
 
         <UNavigationMenu
           :items="links"
           variant="link"
+          :ui="{
+            link: 'text-white hover:text-white',
+            linkLeadingIcon: 'size-5 shrink-0 text-white'
+          }"
         />
       </template>
 

@@ -11,13 +11,14 @@
 - State consequential assumptions and tradeoffs clearly. Ask one focused question when ambiguity would materially change the result.
 - Validate changes using the checks closest to real usage, and report what was verified.
 - Communicate the outcome first, followed by concise supporting detail.
+- This project uses a customised Nuxt directory structure, which is defined in `nuxt.config.ts`.
 
-### JavaScript or TypeScript code
+### Vue and TypeScript changes
 
 - Always check code changes 
 - Stick to standard built-in features as much as possible, and if a third-party dependency is required, install the required package(s) using standard methods
 
-## CSS and front-end styling
+## CSS changes
 
 - Prefer simplicity over complexity.
 - Ensure font size is readable and the font colour has suitable contrast against the background colour of the element.

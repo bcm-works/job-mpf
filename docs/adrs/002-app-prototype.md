@@ -15,6 +15,7 @@ This focus will delay implementation of various more complex and time consuming 
 1. Single user, no user management features or permission levels
 2. Authentication for the [Movie DB](https://www.themoviedb.org/) API is via backend environment variables 
 3. The frontend app design is bare-bones to reflect the unfinished nature of the intial state of the app
+4. Unit tests have not been added as yet, this task can be built out by AI tooling and human review later on
 
 ## Consequences
 

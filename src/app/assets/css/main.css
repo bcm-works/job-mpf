@@ -7,26 +7,27 @@
   --color-*: initial;
 
   --color-brand-100: #FF9770;
+  --color-brand-900: #331E16;
 }
 
 :root {
   --ui-primary: #FF9770;
   --ui-text-highlighted: #FF9770;
   --ui-bg: #010101;
-  --ui-border: #FF9770;
-  --ui-border-muted: #FF9770;
-  --ui-border-accented: #FF9770;
-  --ui-border-inverted: #FF9770;
+  --ui-border: #331E16;
+  --ui-border-muted: #331E16;
+  --ui-border-accented: #331E16;
+  --ui-border-inverted: #331E16;
 }
 
 .dark {
   --ui-primary: #FF9770;
   --ui-text-highlighted: #FF9770;
   --ui-bg: #010101;
-  --ui-border: #FF9770;
-  --ui-border-muted: #FF9770;
-  --ui-border-accented: #FF9770;
-  --ui-border-inverted: #FF9770;
+  --ui-border: #331E16;
+  --ui-border-muted: #331E16;
+  --ui-border-accented: #331E16;
+  --ui-border-inverted: #331E16;
 }
 
 /* Opaque brand header (overrides UHeader default bg-default/75 + blur) */
@@ -42,6 +43,12 @@ header[class*='bg-default'] {
 header[class*='bg-default'] a,
 header[class*='bg-default'] button {
   color: #FFFFFF;
+}
+
+/* Header logo link always uses dark brand color, never white */
+header[class*='bg-default'] a.logo-link,
+header[class*='bg-default'] a.logo-link span {
+  color: #331E16;
 }
 
 /* Header nav icons always match their link's text color */
