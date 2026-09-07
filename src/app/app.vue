@@ -38,7 +38,7 @@ const links = [{
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader :toggle="false">
       <template #left>
         <NuxtLink
           to="/"
@@ -46,7 +46,9 @@ const links = [{
         >
           <AppLogo class="shrink-0 text-brand-900" />
         </NuxtLink>
+      </template>
 
+      <template #right>
         <UNavigationMenu
           :items="links"
           variant="link"

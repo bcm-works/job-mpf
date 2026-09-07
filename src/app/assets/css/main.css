@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* App theme */
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
@@ -11,6 +12,7 @@
   --color-brand-900: #331E16;
 }
 
+/* Colour overrides */
 :root {
   --ui-primary: #FF9770;
   --ui-text-highlighted: #FF9770;
