@@ -10,6 +10,8 @@ This project uses data from [The Movie Database](https://www.themoviedb.org/) an
 
 Please refer to [NOTES.md](NOTES.md) for all of my implementation notes, decisions made, thoughts and general recommendations.
 
+The submission is available online at [mpf.bcm.works](https://mpf.bcm.works/)
+
 ## Structure
 
 - [.claude](.claude/) - Project specific config for [Claude Code](https://claude.com/product/claude-code).
