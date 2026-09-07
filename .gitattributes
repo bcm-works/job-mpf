@@ -11,10 +11,12 @@
 .prototypes/** -linguist-detectable
 .* -linguist-detectable
 .*.* -linguist-detectable
-package-lock.json linguist-generated
+deno.lock linguist-generated
 
 docs/** linguist-documentation
+*.md linguist-documentation
 
 *.js linguist-language=javascript
 *.ts linguist-language=typescript
 *.tsx linguist-language=typescript
+*.vue linguist-language=vue
