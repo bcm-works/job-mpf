@@ -55,6 +55,7 @@ Now edit the Git Ignored file named `.env` and set appropriate values for all va
 
 - `deno task dev` - Start the local dev server
 - `deno task build` - Make a new production-ready build
+- `deno task` - List all available commands from the [tasks section of deno.json](deno.json)
 
 ## Deployment
 
