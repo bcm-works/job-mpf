@@ -8,13 +8,14 @@ This project uses data from [The Movie Database](https://www.themoviedb.org/) an
 - Adding and managing favourite movies
 - Adding and managing movies in groups
 
+Please refer to [NOTES.md](NOTES.md) for all of my implementation notes, decisions made, thoughts and general recommendations.
+
 ## Structure
 
 - [.claude](.claude/) - Project specific config for [Claude Code](https://claude.com/product/claude-code).
 - [.github](.github/) - Project specific config for GitHub.
 - [.prototypes](.prototypes/) - Ideas and half-built prototypes.
 - [.zed](.zed/) - Customised [Zed Editor](https://zed.dev/) project configuration.
-- [.vscode](.vscode/) - Customised [VS Code](https://code.visualstudio.com/) project configuration.
 - [docs](docs/) - Documentation and contextual information.
 - [docs/adrs](docs/adrs/) - Architecture Decision Records as Markdown files.
 - [docs/ADR.md](docs/ADR.md) - Rules for Architecture Decision Records.
