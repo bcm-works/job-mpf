@@ -34,8 +34,8 @@ The submission is available online at [mpf.bcm.works](https://mpf.bcm.works/)
 - [Deno Deploy](https://deno.com/deploy) - Infrastructure and deployment.
 - [Deno KV](https://docs.deno.com/deploy/kv/) - Database storage and hosting.
 - [Deno](https://deno.com/) - Development tooling and package management.
-- [Nuxt](https://nuxt.com/) - A [Vue](https://vuejs.org/) framework that adds modern web server features.
-- [Vue](https://vuejs.org/) - Frontend JavaScript framework.
+- [Nuxt](https://nuxt.com/) - Backend API.
+- [Vue](https://vuejs.org/) - Frontend framework.
 
 ## Initial Setup
 
