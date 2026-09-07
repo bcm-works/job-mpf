@@ -66,7 +66,14 @@ onMounted(async () => {
 
 <template>
   <UContainer class="py-8 flex flex-col gap-6">
-    <UButton to="/" label="Back to search" icon="i-lucide-arrow-left" color="neutral" variant="ghost" class="self-start" />
+    <UButton
+      to="/"
+      label="Back to search"
+      icon="i-lucide-arrow-left"
+      color="neutral"
+      variant="ghost"
+      class="self-start"
+    />
 
     <UAlert
       v-if="error"
@@ -76,7 +83,10 @@ onMounted(async () => {
       :description="error"
     />
 
-    <div v-else-if="pending" class="flex flex-col sm:flex-row gap-6">
+    <div
+      v-else-if="pending"
+      class="flex flex-col sm:flex-row gap-6"
+    >
       <USkeleton class="w-full sm:w-72 aspect-[2/3]" />
       <div class="flex-1 flex flex-col gap-3">
         <USkeleton class="h-8 w-2/3" />
@@ -85,14 +95,20 @@ onMounted(async () => {
       </div>
     </div>
 
-    <article v-else-if="movie" class="flex flex-col sm:flex-row gap-6">
+    <article
+      v-else-if="movie"
+      class="flex flex-col sm:flex-row gap-6"
+    >
       <img
         v-if="movie.posterUrl"
         :src="movie.posterUrl"
         :alt="`Poster for ${movie.title}`"
         class="w-full sm:w-72 rounded-lg object-cover bg-muted self-start"
       >
-      <div v-else class="w-full sm:w-72 aspect-[2/3] rounded-lg bg-muted flex items-center justify-center text-sm text-muted">
+      <div
+        v-else
+        class="w-full sm:w-72 aspect-[2/3] rounded-lg bg-muted flex items-center justify-center text-sm text-muted"
+      >
         No poster available
       </div>
 
@@ -100,7 +116,10 @@ onMounted(async () => {
         <h1 class="text-2xl font-bold">
           {{ movie.title }}
         </h1>
-        <p v-if="movie.tagline" class="text-muted italic">
+        <p
+          v-if="movie.tagline"
+          class="text-muted italic"
+        >
           {{ movie.tagline }}
         </p>
         <p class="text-sm text-muted">
@@ -108,8 +127,15 @@ onMounted(async () => {
           <span v-if="movie.runtime"> • {{ movie.runtime }} min</span>
           <span> • ★ {{ movie.voteAverage.toFixed(1) }} ({{ movie.voteCount }} votes)</span>
         </p>
-        <div v-if="movie.genres.length" class="flex flex-wrap gap-1">
-          <UBadge v-for="genre in movie.genres" :key="genre.id" variant="subtle">
+        <div
+          v-if="movie.genres.length"
+          class="flex flex-wrap gap-1"
+        >
+          <UBadge
+            v-for="genre in movie.genres"
+            :key="genre.id"
+            variant="subtle"
+          >
             {{ genre.name }}
           </UBadge>
         </div>
@@ -127,7 +153,10 @@ onMounted(async () => {
             :aria-pressed="isFavourite(movie.id)"
             @click="onToggleFavourite"
           />
-          <GroupPicker :moviedb-id="movie.id" :title="movie.title" />
+          <GroupPicker
+            :moviedb-id="movie.id"
+            :title="movie.title"
+          />
         </div>
       </div>
     </article>

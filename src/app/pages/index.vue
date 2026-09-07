@@ -120,11 +120,21 @@ onMounted(async () => {
       :description="error"
     />
 
-    <div v-if="pending && !results.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      <USkeleton v-for="n in 8" :key="n" class="aspect-[2/3] w-full" />
+    <div
+      v-if="pending && !results.length"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
+      <USkeleton
+        v-for="n in 8"
+        :key="n"
+        class="aspect-[2/3] w-full"
+      />
     </div>
 
-    <div v-else-if="results.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div
+      v-else-if="results.length"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
       <MovieCard
         v-for="movie in results"
         :key="movie.id"
@@ -147,7 +157,10 @@ onMounted(async () => {
       description="Try a different search term."
     />
 
-    <div v-if="totalPages > 1" class="flex justify-center">
+    <div
+      v-if="totalPages > 1"
+      class="flex justify-center"
+    >
       <UPagination
         :page="page"
         :total="totalResults"

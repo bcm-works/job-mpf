@@ -55,7 +55,10 @@ onMounted(fetchGroups)
     </div>
 
     <UCard>
-      <form class="flex gap-2" @submit.prevent="onCreate">
+      <form
+        class="flex gap-2"
+        @submit.prevent="onCreate"
+      >
         <UInput
           v-model="newTitle"
           placeholder="New group name, e.g. Friday night"
@@ -70,7 +73,10 @@ onMounted(fetchGroups)
           :disabled="!newTitle.trim()"
         />
       </form>
-      <p v-if="formError" class="text-sm text-error mt-2">
+      <p
+        v-if="formError"
+        class="text-sm text-error mt-2"
+      >
         {{ formError }}
       </p>
     </UCard>
@@ -83,16 +89,32 @@ onMounted(fetchGroups)
       :description="error"
     />
 
-    <div v-if="pending && !groups.length" class="flex flex-col gap-2">
-      <USkeleton v-for="n in 3" :key="n" class="h-16 w-full" />
+    <div
+      v-if="pending && !groups.length"
+      class="flex flex-col gap-2"
+    >
+      <USkeleton
+        v-for="n in 3"
+        :key="n"
+        class="h-16 w-full"
+      />
     </div>
 
-    <ul v-else-if="groups.length" class="flex flex-col gap-3">
-      <li v-for="group in groups" :key="group.id">
+    <ul
+      v-else-if="groups.length"
+      class="flex flex-col gap-3"
+    >
+      <li
+        v-for="group in groups"
+        :key="group.id"
+      >
         <UCard>
           <div class="flex items-center justify-between gap-3">
             <div class="min-w-0">
-              <NuxtLink :to="`/groups/${group.id}`" class="font-semibold hover:text-primary truncate block">
+              <NuxtLink
+                :to="`/groups/${group.id}`"
+                class="font-semibold hover:text-primary truncate block"
+              >
                 {{ group.title }}
               </NuxtLink>
               <p class="text-sm text-muted">
@@ -100,7 +122,12 @@ onMounted(fetchGroups)
               </p>
             </div>
             <div class="flex gap-2 shrink-0">
-              <UButton :to="`/groups/${group.id}`" label="Open" size="xs" variant="outline" />
+              <UButton
+                :to="`/groups/${group.id}`"
+                label="Open"
+                size="xs"
+                variant="outline"
+              />
               <UButton
                 label="Delete"
                 size="xs"

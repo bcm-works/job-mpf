@@ -97,7 +97,14 @@ onMounted(async () => {
 
 <template>
   <UContainer class="py-8 flex flex-col gap-6">
-    <UButton to="/groups" label="Back to groups" icon="i-lucide-arrow-left" color="neutral" variant="ghost" class="self-start" />
+    <UButton
+      to="/groups"
+      label="Back to groups"
+      icon="i-lucide-arrow-left"
+      color="neutral"
+      variant="ghost"
+      class="self-start"
+    />
 
     <UAlert
       v-if="error"
@@ -111,7 +118,10 @@ onMounted(async () => {
       <USkeleton class="h-8 w-48" />
     </div>
 
-    <div v-else-if="group" class="flex items-center justify-between gap-3 flex-wrap">
+    <div
+      v-else-if="group"
+      class="flex items-center justify-between gap-3 flex-wrap"
+    >
       <div v-if="!editing">
         <h1 class="text-2xl font-bold">
           {{ group.title }}
@@ -120,16 +130,48 @@ onMounted(async () => {
           {{ movies.length }} movie{{ movies.length === 1 ? '' : 's' }}
         </p>
       </div>
-      <form v-else class="flex gap-2 flex-1 min-w-52" @submit.prevent="onRename">
-        <UInput v-model="editTitle" maxlength="80" class="flex-1" />
-        <UButton type="submit" label="Save" :loading="saving" :disabled="!editTitle.trim()" />
-        <UButton label="Cancel" color="neutral" variant="ghost" @click="editing = false" />
+      <form
+        v-else
+        class="flex gap-2 flex-1 min-w-52"
+        @submit.prevent="onRename"
+      >
+        <UInput
+          v-model="editTitle"
+          maxlength="80"
+          class="flex-1"
+        />
+        <UButton
+          type="submit"
+          label="Save"
+          :loading="saving"
+          :disabled="!editTitle.trim()"
+        />
+        <UButton
+          label="Cancel"
+          color="neutral"
+          variant="ghost"
+          @click="editing = false"
+        />
       </form>
-      <UButton v-if="!editing" label="Rename" icon="i-lucide-pencil" size="xs" variant="outline" @click="editing = true" />
+      <UButton
+        v-if="!editing"
+        label="Rename"
+        icon="i-lucide-pencil"
+        size="xs"
+        variant="outline"
+        @click="editing = true"
+      />
     </div>
 
-    <div v-if="group && movies.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div v-for="movie in movies" :key="movie.moviedbId" class="flex flex-col gap-1">
+    <div
+      v-if="group && movies.length"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
+      <div
+        v-for="movie in movies"
+        :key="movie.moviedbId"
+        class="flex flex-col gap-1"
+      >
         <MovieCard
           :moviedb-id="movie.moviedbId"
           :title="movie.title"
@@ -159,7 +201,11 @@ onMounted(async () => {
       description="Search for movies and add them to this group."
     >
       <template #actions>
-        <UButton to="/" label="Search movies" icon="i-lucide-search" />
+        <UButton
+          to="/"
+          label="Search movies"
+          icon="i-lucide-search"
+        />
       </template>
     </UEmpty>
   </UContainer>

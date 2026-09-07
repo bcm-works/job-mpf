@@ -32,7 +32,10 @@ const rating = computed(() => {
 
 <template>
   <UCard :ui="{ body: 'p-0 sm:p-0' }">
-    <NuxtLink :to="`/movies/${moviedbId}`" class="block focus-visible:outline-3 outline-primary/25 rounded-t-lg overflow-hidden">
+    <NuxtLink
+      :to="`/movies/${moviedbId}`"
+      class="block focus-visible:outline-3 outline-primary/25 rounded-t-lg overflow-hidden"
+    >
       <img
         v-if="posterUrl"
         :src="posterUrl"
@@ -40,13 +43,19 @@ const rating = computed(() => {
         class="w-full aspect-[2/3] object-cover bg-muted"
         loading="lazy"
       >
-      <div v-else class="w-full aspect-[2/3] flex items-center justify-center bg-muted text-muted text-sm px-4 text-center">
+      <div
+        v-else
+        class="w-full aspect-[2/3] flex items-center justify-center bg-muted text-muted text-sm px-4 text-center"
+      >
         No poster available
       </div>
     </NuxtLink>
 
     <div class="p-4 flex flex-col gap-2">
-      <NuxtLink :to="`/movies/${moviedbId}`" class="font-semibold leading-snug hover:text-primary line-clamp-2">
+      <NuxtLink
+        :to="`/movies/${moviedbId}`"
+        class="font-semibold leading-snug hover:text-primary line-clamp-2"
+      >
         {{ title }}
       </NuxtLink>
       <p class="text-sm text-muted">
@@ -67,7 +76,10 @@ const rating = computed(() => {
           :aria-pressed="isFavourite"
           @click="emit('toggle-favourite', moviedbId)"
         />
-        <GroupPicker :moviedb-id="moviedbId" :title="title" />
+        <GroupPicker
+          :moviedb-id="moviedbId"
+          :title="title"
+        />
       </div>
     </div>
   </UCard>

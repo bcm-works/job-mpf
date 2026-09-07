@@ -42,11 +42,21 @@ onMounted(fetchFavourites)
       :description="error"
     />
 
-    <div v-if="pending && !favourites.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      <USkeleton v-for="n in 4" :key="n" class="aspect-[2/3] w-full" />
+    <div
+      v-if="pending && !favourites.length"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
+      <USkeleton
+        v-for="n in 4"
+        :key="n"
+        class="aspect-[2/3] w-full"
+      />
     </div>
 
-    <div v-else-if="favourites.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div
+      v-else-if="favourites.length"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
       <MovieCard
         v-for="movie in favourites"
         :key="movie.moviedbId"
@@ -68,7 +78,11 @@ onMounted(fetchFavourites)
       description="Search for movies and save the ones you love."
     >
       <template #actions>
-        <UButton to="/" label="Search movies" icon="i-lucide-search" />
+        <UButton
+          to="/"
+          label="Search movies"
+          icon="i-lucide-search"
+        />
       </template>
     </UEmpty>
   </UContainer>

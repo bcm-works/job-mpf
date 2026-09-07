@@ -26,7 +26,7 @@
   --ui-border-inverted: #331E16;
 }
 
-/* Opaque brand header (overrides UHeader default bg-default/75 + blur) */
+/* Brand header */
 header[class*='bg-default'] {
   background-color: #FF9770;
   backdrop-filter: none;
@@ -41,18 +41,18 @@ header[class*='bg-default'] button {
   color: #FFFFFF;
 }
 
-/* Header logo link always uses dark brand color, never white */
+/* Header logo */
 header[class*='bg-default'] a.logo-link,
 header[class*='bg-default'] a.logo-link span {
   color: #331E16;
 }
 
-/* Header nav icons always match their link's text color */
+/* Header nav icons */
 header[class*='bg-default'] nav a svg {
   color: currentColor;
 }
 
-/* Active page link: white pill with brand text + icon */
+/* Active page link */
 header[class*='bg-default'] nav a.router-link-active,
 header[class*='bg-default'] nav a.router-link-exact-active,
 header[class*='bg-default'] nav a[aria-current='page'] {

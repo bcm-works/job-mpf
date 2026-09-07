@@ -66,7 +66,10 @@ async function createAndAdd() {
       @click="openPicker"
     />
 
-    <UModal v-model:open="open" :title="`Add “${title}” to a group`">
+    <UModal
+      v-model:open="open"
+      :title="`Add “${title}” to a group`"
+    >
       <template #body>
         <div class="flex flex-col gap-3">
           <UAlert
@@ -76,12 +79,22 @@ async function createAndAdd() {
             :title="error"
           />
 
-          <div v-if="!groups.length" class="text-sm text-muted">
+          <div
+            v-if="!groups.length"
+            class="text-sm text-muted"
+          >
             No groups yet. Create one below.
           </div>
 
-          <ul v-else class="flex flex-col gap-2">
-            <li v-for="group in groups" :key="group.id" class="flex items-center justify-between gap-2 border border-default rounded-md px-3 py-2">
+          <ul
+            v-else
+            class="flex flex-col gap-2"
+          >
+            <li
+              v-for="group in groups"
+              :key="group.id"
+              class="flex items-center justify-between gap-2 border border-default rounded-md px-3 py-2"
+            >
               <span class="text-sm font-medium truncate">{{ group.title }}</span>
               <UButton
                 label="Add"
@@ -92,7 +105,10 @@ async function createAndAdd() {
             </li>
           </ul>
 
-          <form class="flex gap-2" @submit.prevent="createAndAdd">
+          <form
+            class="flex gap-2"
+            @submit.prevent="createAndAdd"
+          >
             <UInput
               v-model="newTitle"
               placeholder="New group name"

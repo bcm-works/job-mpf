@@ -5,7 +5,7 @@
 // - During local `nuxt dev` (Node runtime) falls back to the official
 //   `@deno/kv` npm package backed by a local SQLite file.
 
-import type { UserRecord, MovieRecord, GroupRecord, FavouriteRecord } from '@/server/types.ts';
+import type { UserRecord, MovieRecord, GroupRecord, FavouriteRecord } from '@/server/types.ts'
 
 export { type UserRecord, type MovieRecord, type GroupRecord, type FavouriteRecord }
 
