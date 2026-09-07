@@ -26,7 +26,7 @@ const pending = ref(false)
 const error = ref<string | null>(null)
 const emptySearch = ref(false)
 
-const { favourites, fetchFavourites, isFavourite, toggleFavourite } = useFavourites()
+const { fetchFavourites, isFavourite, toggleFavourite } = useFavourites()
 const toast = useToast()
 const togglingId = ref<number | null>(null)
 let debounce: ReturnType<typeof setTimeout> | null = null

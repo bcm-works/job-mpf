@@ -1,4 +1,3 @@
-// @ts-ignore-file
 //
 // Nuxt config - https://nuxt.com/docs/api/configuration/nuxt-config
 //
