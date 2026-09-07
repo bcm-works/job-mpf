@@ -25,7 +25,7 @@ Based on the [Decision Record Template by Michael Nygard](https://github.com/arc
 
 ## Status
 
-`Approved on 5 Sep 2026`
+`Approved on 7 Sep 2026`
 
 ## Context
 

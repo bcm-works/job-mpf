@@ -2,6 +2,8 @@
 
 Implementation notes, decisions made, thoughts and general recommendations.
 
+Please also refer to the ADRs in docs/adrs](docs/adrs/)
+
 ## Time Spent
 
 I've focused my time on this exercise based on my understanding of the role I'm applying for.
@@ -19,3 +21,8 @@ I have stuck to the rules from my [AI Use document](docs/AI-USE.md), so I have d
 Then I used [OpenCode](https://opencode.ai/) to generate the intial app-level code.
 
 Following this, I refined the output to meet my own standards, via extra prompts and manual code changes.
+
+## Limitations
+
+- The [scope of the app implementation](docs/adrs/002-app-prototype.md) was lowered based on my focus areas
+- 
