@@ -5,6 +5,7 @@
 - This file includes my implementation notes, decisions made, thoughts and general recommendations.
 - Please also refer to the ADRs in [docs/adrs](docs/adrs/).
 - I've focused my time on this exercise based on my understanding of the role I'm applying for.
+- Due to family commitments, my time on this project has been split up over various days.
 - The [scope of the app implementation](docs/adrs/002-app-prototype.md) was lowered based on my focus areas.
 - The logo image was created using the [Emblems app](https://apps.gnome.org/Emblem/).
 
