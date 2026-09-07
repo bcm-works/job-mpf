@@ -1,15 +1,15 @@
-// Add a movie to a group (idempotent).
+// Add a movie to a list (idempotent).
 //
-// POST /api/groups/:id/movies { moviedbId } -> { group, movie }
+// POST /api/lists/:id/movies { moviedbId } -> { list, movie }
 
 import { kvPrefix } from '@/server/utils/kv'
-import type { GroupRecord } from '@/server/types'
-import { assertMoviedbId, ensureMovieRecord, getActiveMovie, groupKey, movieKey, now, useKv } from '@/server/utils/store'
+import type { ListRecord } from '@/server/types'
+import { assertMoviedbId, ensureMovieRecord, getActiveMovie, listKey, movieKey, now, useKv } from '@/server/utils/store'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   if (!id) {
-    throw createError({ statusCode: 400, message: 'A group id is required.' })
+    throw createError({ statusCode: 400, message: 'A list id is required.' })
   }
 
   const body = await readBody<{ moviedbId?: unknown }>(event)
@@ -17,10 +17,10 @@ export default defineEventHandler(async (event) => {
   assertMoviedbId(moviedbId)
 
   const kv = await useKv()
-  const key = [...kvPrefix, groupKey(id)]
-  const entry = await kv.get<GroupRecord>(key)
+  const key = [...kvPrefix, listKey(id)]
+  const entry = await kv.get<ListRecord>(key)
   if (!entry.value || entry.value.status !== 'active') {
-    throw createError({ statusCode: 404, message: `No group found with id "${id}".` })
+    throw createError({ statusCode: 404, message: `No list found with id "${id}".` })
   }
 
   let movie = await getActiveMovie(kv, moviedbId)
@@ -39,8 +39,8 @@ export default defineEventHandler(async (event) => {
   const movieIds = entry.value.movieIds.includes(movieId)
     ? entry.value.movieIds
     : [...entry.value.movieIds, movieId]
-  const group: GroupRecord = { ...entry.value, movieIds, updatedAt: now() }
-  await kv.set(key, group)
+  const list: ListRecord = { ...entry.value, movieIds, updatedAt: now() }
+  await kv.set(key, list)
 
-  return { group, movie }
+  return { list, movie }
 })

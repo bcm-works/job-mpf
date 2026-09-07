@@ -73,7 +73,7 @@ onMounted(fetchFavourites)
 
     <UEmpty
       v-else-if="!pending"
-      icon="i-lucide-heart"
+      icon="i-lucide-star"
       title="No favourites yet"
       description="Search for movies and save the ones you love."
     >

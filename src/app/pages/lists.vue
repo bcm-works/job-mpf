@@ -1,7 +1,7 @@
 <script setup lang="ts">
-useSeoMeta({ title: 'Movie groups' })
+useSeoMeta({ title: 'Movie lists' })
 
-const { groups, pending, error, fetchGroups, createGroup, deleteGroup } = useGroups()
+const { lists, pending, error, fetchLists, createList, deleteList } = useLists()
 const newTitle = ref('')
 const creating = ref(false)
 const formError = ref<string | null>(null)
@@ -16,10 +16,10 @@ async function onCreate() {
   creating.value = true
   formError.value = null
   try {
-    await createGroup(title)
+    await createList(title)
     newTitle.value = ''
   } catch (err: unknown) {
-    formError.value = err instanceof Error ? err.message : 'Failed to create group.'
+    formError.value = err instanceof Error ? err.message : 'Failed to create list.'
   } finally {
     creating.value = false
   }
@@ -28,10 +28,10 @@ async function onCreate() {
 async function onDelete(id: string) {
   deletingId.value = id
   try {
-    await deleteGroup(id)
+    await deleteList(id)
   } catch (err: unknown) {
     toast.add({
-      title: 'Could not delete group',
+      title: 'Could not delete list',
       description: err instanceof Error ? err.message : 'Please try again.',
       color: 'error'
     })
@@ -40,17 +40,17 @@ async function onDelete(id: string) {
   }
 }
 
-onMounted(fetchGroups)
+onMounted(fetchLists)
 </script>
 
 <template>
   <UContainer class="py-8 flex flex-col gap-6">
     <div>
       <h1 class="text-2xl font-bold">
-        Movie groups
+        Movie lists
       </h1>
       <p class="text-muted mt-1">
-        Organise movies into lists. Deleted groups are soft-removed and hidden.
+        Organise movies into lists. Deleted lists are soft-removed and hidden.
       </p>
     </div>
 
@@ -61,13 +61,13 @@ onMounted(fetchGroups)
       >
         <UInput
           v-model="newTitle"
-          placeholder="New group name, e.g. Friday night"
+          placeholder="New list name, e.g. Friday night"
           maxlength="80"
           class="flex-1"
         />
         <UButton
           type="submit"
-          label="Create group"
+          label="Create list"
           icon="i-lucide-plus"
           :loading="creating"
           :disabled="!newTitle.trim()"
@@ -90,7 +90,7 @@ onMounted(fetchGroups)
     />
 
     <div
-      v-if="pending && !groups.length"
+      v-if="pending && !lists.length"
       class="flex flex-col gap-2"
     >
       <USkeleton
@@ -101,29 +101,29 @@ onMounted(fetchGroups)
     </div>
 
     <ul
-      v-else-if="groups.length"
+      v-else-if="lists.length"
       class="flex flex-col gap-3"
     >
       <li
-        v-for="group in groups"
-        :key="group.id"
+        v-for="list in lists"
+        :key="list.id"
       >
         <UCard>
           <div class="flex items-center justify-between gap-3">
             <div class="min-w-0">
               <NuxtLink
-                :to="`/groups/${group.id}`"
+                :to="`/lists/${list.id}`"
                 class="font-semibold hover:text-primary truncate block"
               >
-                {{ group.title }}
+                {{ list.title }}
               </NuxtLink>
               <p class="text-sm text-muted">
-                {{ group.movieIds.length }} movie{{ group.movieIds.length === 1 ? '' : 's' }}
+                {{ list.movieIds.length }} movie{{ list.movieIds.length === 1 ? '' : 's' }}
               </p>
             </div>
             <div class="flex gap-2 shrink-0">
               <UButton
-                :to="`/groups/${group.id}`"
+                :to="`/lists/${list.id}`"
                 label="Open"
                 size="xs"
                 variant="outline"
@@ -133,8 +133,8 @@ onMounted(fetchGroups)
                 size="xs"
                 color="error"
                 variant="ghost"
-                :loading="deletingId === group.id"
-                @click="onDelete(group.id)"
+                :loading="deletingId === list.id"
+                @click="onDelete(list.id)"
               />
             </div>
           </div>
@@ -144,9 +144,9 @@ onMounted(fetchGroups)
 
     <UEmpty
       v-else-if="!pending"
-      icon="i-lucide-folder"
-      title="No groups yet"
-      description="Create your first group above."
+      icon="i-lucide-list"
+      title="No lists yet"
+      description="Create your first list above."
     />
   </UContainer>
 </template>

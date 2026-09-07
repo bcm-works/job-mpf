@@ -1,4 +1,4 @@
-// Shared KV-backed store for movies, favourites and groups.
+// Shared KV-backed store for movies, favourites and lists.
 //
 // Single-user scope: every record belongs to DEFAULT_USER_ID ("default").
 // All records support soft remove via `status: "active" | "removed"` —
@@ -6,7 +6,7 @@
 // and list/read handlers only return "active" records. Re-adding a removed
 // item reactivates the existing record.
 
-import type { FavouriteRecord, GroupRecord, MovieRecord } from '@/server/types'
+import type { FavouriteRecord, ListRecord, MovieRecord } from '@/server/types'
 import { kvPrefix, useKv } from '@/server/utils/kv'
 import type { KvInstance } from '@/server/utils/kv'
 
@@ -14,7 +14,7 @@ export const DEFAULT_USER_ID = 'default'
 
 export const movieKey = (moviedbId: number): string => `movie:${moviedbId}`
 export const favouriteKey = (moviedbId: number): string => `favourite:${moviedbId}`
-export const groupKey = (id: string): string => `group:${id}`
+export const listKey = (id: string): string => `list:${id}`
 
 export function assertMoviedbId(value: unknown): asserts value is number {
   if (typeof value !== 'number' || !Number.isInteger(value) || value <= 0) {
@@ -91,10 +91,10 @@ export async function getActiveMovie(kv: KvInstance, moviedbId: number): Promise
   return entry.value
 }
 
-/** Resolve a group's movieIds to active MovieRecords, skipping missing/removed entries. */
-export async function resolveGroupMovies(kv: KvInstance, group: GroupRecord): Promise<MovieRecord[]> {
+/** Resolve a list's movieIds to active MovieRecords, skipping missing/removed entries. */
+export async function resolveListMovies(kv: KvInstance, list: ListRecord): Promise<MovieRecord[]> {
   const movies: MovieRecord[] = []
-  for (const movieId of group.movieIds ?? []) {
+  for (const movieId of list.movieIds ?? []) {
     const entry = await kv.get<MovieRecord>([...kvPrefix, movieId])
     if (entry.value && entry.value.status === 'active') {
       movies.push(entry.value)

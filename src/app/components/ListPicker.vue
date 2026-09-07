@@ -5,11 +5,11 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (event: 'added', groupId: string): void
+  (event: 'added', listId: string): void
 }>()
 
 const open = ref(false)
-const { groups, fetchGroups, addMovieToGroup } = useGroups()
+const { lists, fetchLists, addMovieToList } = useLists()
 const pendingId = ref<string | null>(null)
 const error = ref<string | null>(null)
 const newTitle = ref('')
@@ -18,18 +18,18 @@ const creating = ref(false)
 function openPicker() {
   open.value = true
   error.value = null
-  fetchGroups()
+  fetchLists()
 }
 
-async function addToGroup(groupId: string) {
-  pendingId.value = groupId
+async function addToList(listId: string) {
+  pendingId.value = listId
   error.value = null
   try {
-    await addMovieToGroup(groupId, props.moviedbId)
-    emit('added', groupId)
+    await addMovieToList(listId, props.moviedbId)
+    emit('added', listId)
     open.value = false
   } catch (err: unknown) {
-    error.value = err instanceof Error ? err.message : 'Failed to add movie to group.'
+    error.value = err instanceof Error ? err.message : 'Failed to add movie to list.'
   } finally {
     pendingId.value = null
   }
@@ -43,12 +43,12 @@ async function createAndAdd() {
   creating.value = true
   error.value = null
   try {
-    const group = await $fetch<{ id: string }>('/api/groups', { method: 'POST', body: { title } })
-    await fetchGroups()
-    await addToGroup(group.id)
+    const list = await $fetch<{ id: string }>('/api/lists', { method: 'POST', body: { title } })
+    await fetchLists()
+    await addToList(list.id)
     newTitle.value = ''
   } catch (err: unknown) {
-    error.value = err instanceof Error ? err.message : 'Failed to create group.'
+    error.value = err instanceof Error ? err.message : 'Failed to create list.'
   } finally {
     creating.value = false
   }
@@ -58,8 +58,8 @@ async function createAndAdd() {
 <template>
   <div class="inline-flex">
     <UButton
-      icon="i-lucide-folder-plus"
-      label="Group"
+      icon="i-lucide-list-plus"
+      label="List"
       color="neutral"
       variant="ghost"
       size="xs"
@@ -68,7 +68,7 @@ async function createAndAdd() {
 
     <UModal
       v-model:open="open"
-      :title="`Add “${title}” to a group`"
+      :title="`Add “${title}” to a list`"
     >
       <template #body>
         <div class="flex flex-col gap-3">
@@ -80,10 +80,10 @@ async function createAndAdd() {
           />
 
           <div
-            v-if="!groups.length"
+            v-if="!lists.length"
             class="text-sm text-muted"
           >
-            No groups yet. Create one below.
+            No lists yet. Create one below.
           </div>
 
           <ul
@@ -91,16 +91,16 @@ async function createAndAdd() {
             class="flex flex-col gap-2"
           >
             <li
-              v-for="group in groups"
-              :key="group.id"
+              v-for="list in lists"
+              :key="list.id"
               class="flex items-center justify-between gap-2 border border-default rounded-md px-3 py-2"
             >
-              <span class="text-sm font-medium truncate">{{ group.title }}</span>
+              <span class="text-sm font-medium truncate">{{ list.title }}</span>
               <UButton
                 label="Add"
                 size="xs"
-                :loading="pendingId === group.id"
-                @click="addToGroup(group.id)"
+                :loading="pendingId === list.id"
+                @click="addToList(list.id)"
               />
             </li>
           </ul>
@@ -111,7 +111,7 @@ async function createAndAdd() {
           >
             <UInput
               v-model="newTitle"
-              placeholder="New group name"
+              placeholder="New list name"
               maxlength="80"
               class="flex-1"
             />

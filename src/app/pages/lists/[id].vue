@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import type { FavouriteMovie } from '~/composables/useFavourites'
-import type { Group } from '~/composables/useGroups'
+import type { MovieList } from '~/composables/useLists'
 
 const route = useRoute()
-const groupId = computed(() => String(route.params.id))
+const listId = computed(() => String(route.params.id))
 
-useSeoMeta({ title: 'Group details' })
+useSeoMeta({ title: 'List details' })
 
-const { fetchGroupDetail, renameGroup, removeMovieFromGroup } = useGroups()
+const { fetchListDetail, renameList, removeMovieFromList } = useLists()
 const { isFavourite, toggleFavourite, fetchFavourites } = useFavourites()
 const toast = useToast()
 
-const group = ref<Group | null>(null)
+const list = ref<MovieList | null>(null)
 const movies = ref<FavouriteMovie[]>([])
 const pending = ref(true)
 const error = ref<string | null>(null)
@@ -25,12 +25,12 @@ async function load() {
   pending.value = true
   error.value = null
   try {
-    const data = await fetchGroupDetail(groupId.value)
-    group.value = data.group
+    const data = await fetchListDetail(listId.value)
+    list.value = data.list
     movies.value = data.movies
-    editTitle.value = data.group.title
+    editTitle.value = data.list.title
   } catch (err: unknown) {
-    error.value = err instanceof Error ? err.message : 'Failed to load group.'
+    error.value = err instanceof Error ? err.message : 'Failed to load list.'
   } finally {
     pending.value = false
   }
@@ -38,16 +38,16 @@ async function load() {
 
 async function onRename() {
   const title = editTitle.value.trim()
-  if (!title || !group.value) {
+  if (!title || !list.value) {
     return
   }
   saving.value = true
   try {
-    group.value = await renameGroup(group.value.id, title)
+    list.value = await renameList(list.value.id, title)
     editing.value = false
   } catch (err: unknown) {
     toast.add({
-      title: 'Could not rename group',
+      title: 'Could not rename list',
       description: err instanceof Error ? err.message : 'Please try again.',
       color: 'error'
     })
@@ -72,12 +72,12 @@ async function onToggleFavourite(moviedbId: number) {
 }
 
 async function onRemoveMovie(moviedbId: number) {
-  if (!group.value) {
+  if (!list.value) {
     return
   }
   removingId.value = moviedbId
   try {
-    await removeMovieFromGroup(group.value.id, moviedbId)
+    await removeMovieFromList(list.value.id, moviedbId)
     movies.value = movies.value.filter(movie => movie.moviedbId !== moviedbId)
   } catch (err: unknown) {
     toast.add({
@@ -98,8 +98,8 @@ onMounted(async () => {
 <template>
   <UContainer class="py-8 flex flex-col gap-6">
     <UButton
-      to="/groups"
-      label="Back to groups"
+      to="/lists"
+      label="Back to lists"
       icon="i-lucide-arrow-left"
       color="neutral"
       variant="ghost"
@@ -119,12 +119,12 @@ onMounted(async () => {
     </div>
 
     <div
-      v-else-if="group"
+      v-else-if="list"
       class="flex items-center justify-between gap-3 flex-wrap"
     >
       <div v-if="!editing">
         <h1 class="text-2xl font-bold">
-          {{ group.title }}
+          {{ list.title }}
         </h1>
         <p class="text-muted mt-1">
           {{ movies.length }} movie{{ movies.length === 1 ? '' : 's' }}
@@ -164,7 +164,7 @@ onMounted(async () => {
     </div>
 
     <div
-      v-if="group && movies.length"
+      v-if="list && movies.length"
       class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
     >
       <div
@@ -183,7 +183,7 @@ onMounted(async () => {
           @toggle-favourite="onToggleFavourite"
         />
         <UButton
-          label="Remove from group"
+          label="Remove from list"
           icon="i-lucide-x"
           color="error"
           variant="ghost"
@@ -195,10 +195,10 @@ onMounted(async () => {
     </div>
 
     <UEmpty
-      v-else-if="group && !pending"
-      icon="i-lucide-folder-open"
-      title="No movies in this group yet"
-      description="Search for movies and add them to this group."
+      v-else-if="list && !pending"
+      icon="i-lucide-list"
+      title="No movies in this list yet"
+      description="Search for movies and add them to this list."
     >
       <template #actions>
         <UButton

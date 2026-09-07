@@ -67,16 +67,17 @@ const rating = computed(() => {
 
       <div class="flex gap-2 pt-1">
         <UButton
-          :icon="isFavourite ? 'i-lucide-heart-off' : 'i-lucide-heart'"
+          icon="i-lucide-star"
           :label="isFavourite ? 'Saved' : 'Save'"
           :color="isFavourite ? 'primary' : 'neutral'"
           :variant="isFavourite ? 'solid' : 'outline'"
           size="xs"
+          :class="isFavourite ? 'favourite-saved' : undefined"
           :loading="favouritePending"
           :aria-pressed="isFavourite"
           @click="emit('toggle-favourite', moviedbId)"
         />
-        <GroupPicker
+        <ListPicker
           :moviedb-id="moviedbId"
           :title="title"
         />

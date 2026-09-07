@@ -145,15 +145,16 @@ onMounted(async () => {
 
         <div class="flex gap-2 flex-wrap pt-1">
           <UButton
-            :icon="isFavourite(movie.id) ? 'i-lucide-heart-off' : 'i-lucide-heart'"
+            icon="i-lucide-star"
             :label="isFavourite(movie.id) ? 'Saved to favourites' : 'Save to favourites'"
             :color="isFavourite(movie.id) ? 'primary' : 'neutral'"
             :variant="isFavourite(movie.id) ? 'solid' : 'outline'"
+            :class="isFavourite(movie.id) ? 'favourite-saved' : undefined"
             :loading="toggling"
             :aria-pressed="isFavourite(movie.id)"
             @click="onToggleFavourite"
           />
-          <GroupPicker
+          <ListPicker
             :moviedb-id="movie.id"
             :title="movie.title"
           />

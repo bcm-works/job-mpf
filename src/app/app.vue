@@ -12,7 +12,7 @@ useHead({
 })
 
 const title = 'Movie Finder'
-const description = 'Search movies, save favourites and organise them into groups.'
+const description = 'Search movies, save favourites and organise them into lists.'
 
 useSeoMeta({
   title,
@@ -28,11 +28,11 @@ const links = [{
 }, {
   label: 'Favourites',
   to: '/favourites',
-  icon: 'i-lucide-heart'
+  icon: 'i-lucide-star'
 }, {
-  label: 'Groups',
-  to: '/groups',
-  icon: 'i-lucide-folder'
+  label: 'Lists',
+  to: '/lists',
+  icon: 'i-lucide-list'
 }]
 </script>
 

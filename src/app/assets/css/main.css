@@ -62,3 +62,19 @@ header[class*='bg-default'] nav a[aria-current='page'] {
   color: #FF9770;
   border-radius: var(--ui-radius);
 }
+
+/* Favourite saved state - white background, header brand colour text */
+.favourite-saved {
+  background-color: #FFFFFF;
+  color: var(--color-brand-100);
+  border: 1px solid var(--color-brand-100);
+}
+
+.favourite-saved:hover {
+  background-color: #FFFFFF;
+  color: var(--color-brand-100);
+}
+
+.favourite-saved svg {
+  color: currentColor;
+}

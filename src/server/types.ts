@@ -30,7 +30,7 @@ export type FavouriteRecord = {
   status: RecordStatus
 }
 
-export type GroupRecord = {
+export type ListRecord = {
   id: string
   title: string
   userId: string

@@ -6,7 +6,7 @@ This project uses data from [The Movie Database](https://www.themoviedb.org/) an
 
 - Searching for movies
 - Adding and managing favourite movies
-- Adding and managing movies in groups
+- Adding and managing movies in lists
 
 Please refer to [NOTES.md](NOTES.md) for all of my implementation notes, decisions made, thoughts and general recommendations.
 

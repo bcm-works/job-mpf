@@ -1,35 +1,35 @@
-// Remove a movie from a group (idempotent, group stays active).
+// Remove a movie from a list (idempotent, list stays active).
 //
-// DELETE /api/groups/:id/movies/:moviedbId -> { group, removed: moviedbId }
+// DELETE /api/lists/:id/movies/:moviedbId -> { list, removed: moviedbId }
 
 import { kvPrefix } from '@/server/utils/kv'
-import type { GroupRecord } from '@/server/types'
-import { groupKey, movieKey, now, useKv } from '@/server/utils/store'
+import type { ListRecord } from '@/server/types'
+import { listKey, movieKey, now, useKv } from '@/server/utils/store'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   const rawMovieId = getRouterParam(event, 'moviedbId')
   const moviedbId = Number(rawMovieId)
   if (!id) {
-    throw createError({ statusCode: 400, message: 'A group id is required.' })
+    throw createError({ statusCode: 400, message: 'A list id is required.' })
   }
   if (!rawMovieId || !Number.isInteger(moviedbId) || moviedbId <= 0) {
     throw createError({ statusCode: 400, message: 'A numeric moviedbId is required.' })
   }
 
   const kv = await useKv()
-  const key = [...kvPrefix, groupKey(id)]
-  const entry = await kv.get<GroupRecord>(key)
+  const key = [...kvPrefix, listKey(id)]
+  const entry = await kv.get<ListRecord>(key)
   if (!entry.value || entry.value.status !== 'active') {
-    throw createError({ statusCode: 404, message: `No group found with id "${id}".` })
+    throw createError({ statusCode: 404, message: `No list found with id "${id}".` })
   }
 
-  const group: GroupRecord = {
+  const list: ListRecord = {
     ...entry.value,
     movieIds: entry.value.movieIds.filter(movieId => movieId !== movieKey(moviedbId)),
     updatedAt: now()
   }
-  await kv.set(key, group)
+  await kv.set(key, list)
 
-  return { group, removed: moviedbId }
+  return { list, removed: moviedbId }
 })
