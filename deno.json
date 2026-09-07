@@ -13,7 +13,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "deps": "deno update"
   },
   "imports": {
     "@/*": "./src/*",
@@ -25,6 +26,7 @@
     "@nuxt/eslint": "npm:@nuxt/eslint@^1.17.0",
     "eslint": "npm:eslint@^10.10.0",
     "typescript": "npm:typescript@^6.0.3",
+    "vue-router": "npm:vue-router@^5.3.1",
     "vue-tsc": "npm:vue-tsc@^3.3.11"
   },
   "allowScripts": {

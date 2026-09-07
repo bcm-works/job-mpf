@@ -4,11 +4,12 @@
     "npm:@deno/kv@0.14": "0.14.0",
     "npm:@iconify-json/lucide@^1.2.129": "1.2.129",
     "npm:@nuxt/eslint@^1.17.0": "1.17.0_eslint@10.10.0_@vue+compiler-sfc@3.5.42_rolldown@1.2.7_typescript@6.0.3_vite@8.2.2",
-    "npm:@nuxt/ui@^4.11.0": "4.11.0_tailwindcss@4.3.3_typescript@6.0.3_@deno+kv@0.14.0",
+    "npm:@nuxt/ui@^4.11.0": "4.11.0_tailwindcss@4.3.3_typescript@6.0.3_vue-router@5.3.1_vue@3.5.42",
     "npm:eslint@^10.10.0": "10.10.0_jiti@2.7.0",
     "npm:nuxt@^4.5.2": "4.5.2_rolldown@1.2.7_@vue+compiler-sfc@3.5.42_eslint@10.10.0_typescript@6.0.3_vite@8.2.2_vue-tsc@3.3.11",
     "npm:tailwindcss@^4.3.3": "4.3.3",
     "npm:typescript@^6.0.3": "6.0.3",
+    "npm:vue-router@^5.3.1": "5.3.1_@vue+compiler-sfc@3.5.42_vite@8.2.2_vue@3.5.42_jiti@2.7.0_rolldown@1.2.7_typescript@6.0.3",
     "npm:vue-tsc@^3.3.11": "3.3.11_typescript@6.0.3"
   },
   "npm": {
@@ -1231,7 +1232,7 @@
       ],
       "bin": true
     },
-    "@nuxt/ui@4.11.0_tailwindcss@4.3.3_typescript@6.0.3_@deno+kv@0.14.0": {
+    "@nuxt/ui@4.11.0_tailwindcss@4.3.3_typescript@6.0.3_vue-router@5.3.1_vue@3.5.42": {
       "integrity": "sha512-gDs67/fWk3kipcEV4Pc5h1VnZD1glfWfINmJU7s3qpkxxRTkfkPxnUszXG664whNWcoqucS1WgZ/rNjZa3pTMw==",
       "dependencies": [
         "@floating-ui/dom",
@@ -1297,7 +1298,11 @@
         "unplugin-auto-import",
         "unplugin-vue-components",
         "vaul-vue",
-        "vue-component-type-helpers"
+        "vue-component-type-helpers",
+        "vue-router"
+      ],
+      "optionalPeers": [
+        "vue-router"
       ],
       "bin": true
     },
@@ -6864,6 +6869,7 @@
       "npm:nuxt@^4.5.2",
       "npm:tailwindcss@^4.3.3",
       "npm:typescript@^6.0.3",
+      "npm:vue-router@^5.3.1",
       "npm:vue-tsc@^3.3.11"
     ]
   }
